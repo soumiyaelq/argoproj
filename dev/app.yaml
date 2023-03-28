@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: application
 
 metadata:
- name: myapp-v1
+ name: myapp
  namespace: argocd
 
 spec:
