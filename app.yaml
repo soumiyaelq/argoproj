@@ -8,7 +8,7 @@ spec:
  source:
   repoURL: https://github.com/soumiyaelq/argoproj
   targetRevision: HEAD
-  path: dev
+  path: 
  destination:
   server: https://kubernetes.default.svc
   namespace: myapp
