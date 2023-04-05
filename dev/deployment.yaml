@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myapp
-  creationTimestamp: null
   labels:
     run: nginx
     name: nginx
@@ -17,7 +16,7 @@ spec:
         app: myapp
     spec:
       containers:
-      - name: myapp
+      - name: myapp-nginx
         image: nginx
         ports:
-        - containerPort: 8081
+        - containerPort: 8080
