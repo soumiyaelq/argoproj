@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ngix-config
+data:
+  nginx.conf: |
+    index.html
+    nginx.conf 
+

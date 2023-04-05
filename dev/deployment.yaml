@@ -20,3 +20,10 @@ spec:
         image: nginx
         ports:
         - containerPort: 8080
+        volumeMounts: 
+         - name: ngix-config-volume
+           mountPath: /nginx/config
+      volumes:
+      - name: ngix-config-volume
+        ConfigMap: 
+         name : ngix-config
