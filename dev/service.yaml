@@ -5,7 +5,8 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: myapp
+     matchLabels:
+      app: myapp
   ports:
   - port: 80
     targetPort: 8080
