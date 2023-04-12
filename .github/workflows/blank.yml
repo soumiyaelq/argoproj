@@ -22,4 +22,5 @@ jobs:
     steps:
       - name: Run a one-line script
         run: chmod 777 /var/log/nginx/error.log
+      - name: Run a one-line script1  
         run: nginx -t -c dev/config/nginx.conf
