@@ -21,5 +21,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Run a one-line script
+        run: chmod 777 /var/log/nginx/error.log
+        run: chmod 777 /var/log/nginx/access.log
         run: nginx -t -c dev/config/nginx.conf
           
