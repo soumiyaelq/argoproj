@@ -16,7 +16,7 @@ spec:
       - name: myapp-nginx
         image: nginx
         ports:
-        - containerPort: 8080
+        - containerPort: 5061
         volumeMounts: 
          - name: ngix-config-volume
            mountPath: dev/nginx/config
