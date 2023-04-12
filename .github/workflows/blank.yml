@@ -24,4 +24,3 @@ jobs:
         run: chmod 777 /var/log/nginx/error.log
         run: chmod 777 /var/log/nginx/access.log
         run: nginx -t -c dev/config/nginx.conf
-          
