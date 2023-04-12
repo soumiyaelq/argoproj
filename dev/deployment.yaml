@@ -19,7 +19,7 @@ spec:
         - containerPort: 8080
         volumeMounts: 
          - name: ngix-config-volume
-           mountPath: /nginx/config
+           mountPath: dev/nginx/config
       volumes:
       - name: ngix-config-volume
         configMap: 
