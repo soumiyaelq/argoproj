@@ -23,4 +23,4 @@ spec:
       volumes:
       - name: ngix-config-volume
         configMap: 
-         name : ngix-config
+         name : nginx-1-nginx-configmap
