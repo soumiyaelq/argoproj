@@ -13,9 +13,8 @@ metadata:
       sendfile on;
 
        upstream backend {
-       server myapp-7cf4c4fbdc-b5fkm:8080;
-       server kibana-644f7c776-p7wcb:5601;
-       server elasticsearch-7dcdbd57f6-gq6fr:5601;
+       server myapp-service:8080;
+       server kibana:5601;
       }
       server {
         listen 80;
