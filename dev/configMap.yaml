@@ -5,7 +5,7 @@ metadata:
   namespace: default
 data:
   nginx.conf: |
-    worker_processes auto;
+    worker_processes 1;
     events {
       worker_connections 1024;
     }
@@ -14,14 +14,13 @@ data:
       sendfile on;
 
        upstream backend {
-       server myapp-7cf4c4fbdc-b5fkm:8080;
-       server kibana-644f7c776-p7wcb:8080;
-       server elasticsearch-7dcdbd57f6-gq6fr:5601;
+       server kibana:5601;
+       server myapp-service:8080;
+       server elasticsearch:5601;
       }
       server {
         listen 80;
-        server_name http://34.168.240.71/ ;
-
+        
       location /backend {
       proxy_pass http://backend;
       proxy_set_header Host $host;
