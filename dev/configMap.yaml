@@ -5,7 +5,7 @@ metadata:
   namespace: default
 data:
   nginx.conf: |
-    worker_processes 1;
+    worker_processes auto;
     events {
       worker_connections 1024;
     }
@@ -20,7 +20,7 @@ data:
       }
       server {
         listen 80;
-        server_name myserver.com;
+        server_name http://34.168.240.71/;
 
       location /backend {
       proxy_pass http://backend;
