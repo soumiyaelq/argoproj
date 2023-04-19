@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: nginx-config
   namespace: default
-data:
+  spec:
     worker_processes 1;
     events {
       worker_connections 1024;
