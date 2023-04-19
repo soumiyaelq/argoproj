@@ -15,7 +15,7 @@ data:
 
        upstream backend {
        server myapp-7cf4c4fbdc-b5fkm:8080;
-       server kibana-644f7c776-p7wcb:5601;
+       server kibana-644f7c776-p7wcb:8080;
        server elasticsearch-7dcdbd57f6-gq6fr:5601;
       }
       server {
