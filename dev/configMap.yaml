@@ -10,11 +10,13 @@ data:
       worker_connections 1024;
     }
     http {
-      appstream app1 {
-        server app1-service:8080;
-      }
-      appstream app2 {
-        server app2-service:8080;
+   
+      sendfile on;
+
+       upstream backend {
+       server myapp-7cf4c4fbdc-b5fkm:8080;
+       server kibana-644f7c776-p7wcb:8080;
+       server elasticsearch-7dcdbd57f6-gq6fr:8080;
       }
       server {
         listen 80;
@@ -24,14 +26,20 @@ data:
           root /usr/share/nginx/html;
           index index.html;
         }
-        location /app1 {
-          proxy_pass http://app1;
+        location /myapp-7cf4c4fbdc-b5fkm {
+          proxy_pass http://backend;
           proxy_set_header Host $host;
           proxy_set_header X-Real-IP $remote_addr;
         }
 
-        location /app2 {
-          proxy_pass http://app2;
+        location /kibana-644f7c776-p7wcb {
+           proxy_pass http://backend;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+        }
+
+          location /elasticsearch-7dcdbd57f6-gq6fr {
+           proxy_pass http://backend;
           proxy_set_header Host $host;
           proxy_set_header X-Real-IP $remote_addr;
         }
