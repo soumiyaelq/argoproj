@@ -16,7 +16,7 @@ data:
        upstream backend {
        server kibana:5601;
        server myapp-service:8080;
-       server elasticsearch:9200;
+       server elasticsearch:5601;
       }
       server {
         listen 80;
