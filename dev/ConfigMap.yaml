@@ -24,7 +24,8 @@ data:
       }
       server {
         listen 80;
-
+        server_name www.my-webserver.com;
+        
       location /kibana {
        proxy_pass http://kibana;
        proxy_set_header Host $host;
