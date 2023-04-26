@@ -14,10 +14,10 @@ data:
       sendfile on;
 
        upstream kibana {
-       server kibana:5601/;
+       server kibana:5601;
       }
        upstream myapp-service {
-       server myapp-service:8080/;
+       server myapp-service:8080;
       }
        upstream elasticsearch {
        server elasticsearch:5601;
