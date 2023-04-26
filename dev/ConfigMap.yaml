@@ -26,33 +26,33 @@ data:
        listen 80;
        server_name www.my-webserver.com;
         
-       location /kibana {
-        proxy_pass http://kibana;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_connect_timeout 30;
-        proxy_send_timeout 30;
-         }
-       location /myapp-service {
-        proxy_pass http://myapp-service;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_connect_timeout 30;
-        proxy_send_timeout 30;
-       }
-       location /elasticsearch {
-        proxy_pass http://elasticsearch;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
-        proxy_connect_timeout 30;
-        proxy_send_timeout 30;       
-       }
+        location /kibana {
+         proxy_pass http://kibana;
+         proxy_set_header Host $host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_connect_timeout 30;
+         proxy_send_timeout 30;
+        }
+        location /myapp-service {
+         proxy_pass http://myapp-service;
+         proxy_set_header Host $host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_connect_timeout 30;
+         proxy_send_timeout 30;
+        }
+        location /elasticsearch {
+         proxy_pass http://elasticsearch;
+         proxy_set_header Host $host;
+         proxy_set_header X-Real-IP $remote_addr;
+         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+         proxy_set_header X-Forwarded-Proto $scheme;
+         proxy_connect_timeout 30;
+         proxy_send_timeout 30;       
+        }
       }
     }
 
