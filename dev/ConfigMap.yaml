@@ -14,13 +14,13 @@ data:
       sendfile on;
 
        upstream kibana {
-       server kibana-644f7c776-dxhxg:5601;
+       server kibana:5601;
       }
        upstream myapp-service {
-       server myapp-7cf4c4fbdc-hsnb6:8080;
+       server myapp-service:8080;
       }
        upstream elasticsearch {
-       server elasticsearch-7dcdbd57f6-2lp5k:5601;
+       server elasticsearch:5601;
       }
       server {
        listen 80;
