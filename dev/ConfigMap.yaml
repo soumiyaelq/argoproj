@@ -26,7 +26,7 @@ data:
        listen 80;
        server_name www.my-webserver.com;
         
-        location /kibana {
+        location /kibana/ {
          proxy_pass http://kibana;
          proxy_set_header Host $host;
          proxy_set_header X-Real-IP $remote_addr;
@@ -35,7 +35,7 @@ data:
          proxy_connect_timeout 30;
          proxy_send_timeout 30;
         }
-        location /myapp-service {
+        location /myapp-service/ {
          proxy_pass http://myapp-service;
          proxy_set_header Host $host;
          proxy_set_header X-Real-IP $remote_addr;
@@ -44,7 +44,7 @@ data:
          proxy_connect_timeout 30;
          proxy_send_timeout 30;
         }
-        location /elasticsearch {
+        location /elasticsearch/ {
          proxy_pass http://elasticsearch;
          proxy_set_header Host $host;
          proxy_set_header X-Real-IP $remote_addr;
