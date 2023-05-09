@@ -18,8 +18,6 @@ data:
       }
       upstream myapp-service {
         server myapp-service:8080;
-        index index.html;
-        root /usr/share/nginx/html
       }
       upstream elasticsearch {
         server elasticsearch:5601;
@@ -34,8 +32,8 @@ data:
          proxy_set_header X-Real-IP $remote_addr;
          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
          proxy_set_header X-Forwarded-Proto $scheme;
-         proxy_connect_timeout 30;
-         proxy_send_timeout 30;
+         proxy_connect_timeout 250;
+         proxy_send_timeout 250;
         }
         location /myapp-service/ {
          proxy_pass http://myapp-service/;
@@ -43,8 +41,8 @@ data:
          proxy_set_header X-Real-IP $remote_addr;
          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
          proxy_set_header X-Forwarded-Proto $scheme;
-         proxy_connect_timeout 30;
-         proxy_send_timeout 30;
+         proxy_connect_timeout 250;
+         proxy_send_timeout 250;
         }
         location /elasticsearch/ {
          proxy_pass http://elasticsearch/;
@@ -52,8 +50,8 @@ data:
          proxy_set_header X-Real-IP $remote_addr;
          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
          proxy_set_header X-Forwarded-Proto $scheme;
-         proxy_connect_timeout 30;
-         proxy_send_timeout 30;       
+         proxy_connect_timeout 250;
+         proxy_send_timeout 250;       
         }
       }
     }
