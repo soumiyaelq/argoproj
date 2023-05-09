@@ -18,6 +18,8 @@ data:
       }
       upstream myapp-service {
         server myapp-service:8080;
+        index index.html;
+        root /usr/share/nginx/html
       }
       upstream elasticsearch {
         server elasticsearch:5601;
